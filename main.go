@@ -3,31 +3,47 @@ package main
 import "fmt"
 
 func main() {
-	//hardcoded map created as per the data given in problem statement
-	Score := map[string]int{"A":90,"B":48,"C":63,"D":75,"E":70}
+	//declared the map for storing the student and scores respectively
+	Score := map[string]int{}
 
-	//result map to print first name of student and then grade
-	Result := map[string]string{}
+	//for getting the number of students user wants to enter dynamically
+	var i int 
+	fmt.Println("How many student's score you want to enter :")
+	fmt.Scanln(&i)
+	
+	//iteration for the student name and marks 
+	for j:=1;j<=i;j++{
+	fmt.Println("Enter student name :")
+	var name string
+	fmt.Scanln(&name)
+	fmt.Println("Enter marks of ",name)
+	var marks int
+	fmt.Scanln(&marks)
+		
+	//stored data in a map
+	Score[name] = marks
+}
+fmt.Println("Team      Grades")
 
-	//iteration on the score map for assigning the grade to students
+	//iteration on the score map for assigning the grade to students and displaying it as required
 	for name, marks := range Score {
 		switch {
 		case marks >= 0 && marks <= 49:
-			Result[name] = "F"
+			fmt.Println(name,"      ","F")
 		case marks >= 50 && marks <= 59:
-			Result[name] = "E"
+			fmt.Println(name,"      ","E")
 		case marks >= 60 && marks <= 69:
-			Result[name] = "D"
+			fmt.Println(name,"      ","D")
 		case marks >= 70 && marks <= 79:
-			Result[name] = "C"
+			fmt.Println(name,"      ","C")
 		case marks >= 80 && marks <= 89:
-			Result[name] = "B"
+			fmt.Println(name,"      ","B")
 		case marks >= 90 && marks <= 100:
-			Result[name] = "A"
+			fmt.Println(name,"      ","A")
+		default:
+			break
 		}
 	}
-
-	fmt.Println(Result)
 
 }
 
