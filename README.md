@@ -5,7 +5,7 @@ Below problem statement is solved in main.go file.
 No validations added for checking the value type or value out of range bound since it is not given in problem statement
 
 
-Assignment#4: (60 Mins)
+Assignment 4: (60 Mins)
 Write the program to display students' grades based on input score. The criteria for
 display grades are below.
 Score 0-49 : Grade F
